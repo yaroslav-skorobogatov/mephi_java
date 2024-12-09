@@ -3,6 +3,7 @@ package pckg.lesson_7.serialization;
 import java.io.*;
 import java.nio.file.Path;
 
+//todo надо посмотреть вторую 9 занятия
 public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         //базовые структуры на языке java, позволяющие работать с потоками байт
