@@ -1,4 +1,4 @@
-package pckg.lesson_6.exeptions;
+package pckg.lesson_6.exсeptions;
 
 public class Main {
     //throws Exception тут пробросили на уровень jvm

@@ -1,4 +1,4 @@
-package pckg.lesson_6.exeptions;
+package pckg.lesson_6.exсeptions;
 
 import java.io.IOException;
 

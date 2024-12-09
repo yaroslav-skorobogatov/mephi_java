@@ -1,4 +1,4 @@
-package pckg.lesson_6.exeptions;
+package pckg.lesson_6.exсeptions;
 
 public class CustomException1 extends Exception {
     public CustomException1(String message) {
