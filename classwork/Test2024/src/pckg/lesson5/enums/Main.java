@@ -1,6 +1,6 @@
 package pckg.lesson5.enums;
 
-import pckg.lesson_6.exсeptions.User;
+import pckg.lesson6.exсeptions.User;
 
 public class Main {
     public static void main(String[] args) {

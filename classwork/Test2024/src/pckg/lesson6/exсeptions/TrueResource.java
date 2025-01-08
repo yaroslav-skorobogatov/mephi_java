@@ -1,4 +1,4 @@
-package pckg.lesson_6.exсeptions;
+package pckg.lesson6.exсeptions;
 
 public class TrueResource implements AutoCloseable{
     @Override

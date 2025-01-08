@@ -1,4 +1,4 @@
-package pckg.lesson_6.exсeptions;
+package pckg.lesson6.exсeptions;
 
 
 import lombok.Data;

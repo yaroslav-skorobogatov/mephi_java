@@ -1,4 +1,4 @@
-package pckg.lesson_7.serialization;
+package pckg.lesson7.serialization;
 
 import java.io.*;
 import java.nio.file.Path;
@@ -14,6 +14,10 @@ public class Main {
         Path path = Path.of("resources", "users.out");
 //        writeObj(path);
         readObj(path);
+
+
+        User user = new User(1, "");
+        user.clone();
 
     }
 

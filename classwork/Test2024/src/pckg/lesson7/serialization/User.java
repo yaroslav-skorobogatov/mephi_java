@@ -1,4 +1,4 @@
-package pckg.lesson_7.serialization;
+package pckg.lesson7.serialization;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,12 +11,29 @@ import java.io.*;
 @Getter
 @ToString
 @AllArgsConstructor
-public class User implements  Serializable { //DTO
+public class User implements  Serializable, Cloneable { //DTO
     @Serial
     private static final long serialVersionUID = 1L;
 
     private int age;
     private String name;
+
+    //более предпочтительный способ копирования
+    public User(User user) {
+        this.name = user.name;
+        this.age = user.age;
+    }
+
+    @Override
+    public User clone() {
+        try {
+            User clone = (User) super.clone();
+            // TODO: copy mutable state here, so the clone can't change the internals of the original
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
 
     //transient - исключаем из сериализации и десериализации
     //private transient String desc;
