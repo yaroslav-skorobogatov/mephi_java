@@ -1,4 +1,4 @@
-package pckg.lesson8.generics;
+package pckg.lesson8.generics.old;
 
 public class GenericUser<T> {
     private T value;

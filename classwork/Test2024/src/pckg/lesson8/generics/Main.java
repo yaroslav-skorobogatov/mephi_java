@@ -1,28 +1,37 @@
 package pckg.lesson8.generics;
 
-import java.util.Optional;
+import pckg.lesson8.generics.car.Bolid;
+import pckg.lesson8.generics.car.Car;
+import pckg.lesson8.generics.car.Taxi;
 
 public class Main {
     public static void main(String[] args) {
-        var user1 = new User1();
-        var user2 = new User2();
+        TaxiDriver<Taxi> taxiDriver = new TaxiDriver<>("taxi_dr_name");
+        taxiDriver.setCar(new Taxi());
 
-        user1.printAndReturnValue(1);
-        user2.printAndReturnValue("text");
+        Racer<Bolid> racer = new Racer<>("racer_name");
+        racer.setCar(new Bolid());
+        //<> - diamond
 
-        GenericUser<Integer> genericUser1 = new GenericUser<>();
-        genericUser1.printAndReturnValue(1);
+//        TaxiDriver<Bolid> taxiDriver1 = new TaxiDriver<>("taxi_dr_name"); // уже ограничили параметр класса, тпоэтому ошибка
+//        taxiDriver1.setCar(new Taxi());
 
-        GenericUser<String> genericUser2 = new GenericUser<>();
-        genericUser2.printAndReturnValue("text");
+        //wildcard
+        Racer<? extends Car> racer2 = new Racer<>("racer_name"); // все что ниже этого класса, тоесть наследники
+        //Racer<? super Car> racer2 = new Racer<>("racer_name");// все что выше этого класса, тоесть родители
+        //Racer<?> racer2 = new Racer<>("racer_name"); // все
 
-        Optional<String> stringOptional = Optional.of("some text");
-        Optional<Integer> integerOptional = Optional.of(255);
-        Optional<User1> userOptional = Optional.of(new User1());
+        printHorsepower(taxiDriver);
+        printHorsepower(racer);
 
-        var str = stringOptional.get();
-        var integer = integerOptional.get();
+        // String[] Object[] // ковариантность- String[] явлется подтипом  Object[]
+        //
+        // A - подтип B
+        //CustomArray<A> CustomArray<B> // иновариантность - CustomArray<A> не является подтипом CustomArray<B>
+    }
 
+    public static <T extends Car> void printHorsepower(CarHolder<T> carHolder) {
+        System.out.println(carHolder.getCar().getHorsepower());
     }
 
 }
