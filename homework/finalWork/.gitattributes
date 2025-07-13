@@ -1,0 +1,4 @@
+/mvnw text eol=lf
+*.cmd text eol=crlf
+zip -r finalWork.zip finalWork -x "*/target/*" "*/.idea/*" "*.iml"
+.mvn

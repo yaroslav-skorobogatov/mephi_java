@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: USERS-create.yaml
+      relativeToChangeLogFile: true
+  - include:
+      file: USERS-insert.yaml
+      relativeToChangeLogFile: true
