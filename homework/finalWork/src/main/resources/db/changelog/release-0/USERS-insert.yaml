@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - changeSet:
+      id: USERS-insert
+      author: skorobogatov_ys
+      changes:
+        - insert:
+            tableName: USERS
+            columns:
+              - column: { name: FIRST_NAME, value: Ivan }
+              - column: { name: AGE, valueNumeric: 30 }
+              - column: { name: COUNTRY, value: RUSSIA }
+
+        - insert:
+            tableName: USERS
+            columns:
+              - column: { name: FIRST_NAME, value: Yuki }
+              - column: { name: AGE, valueNumeric: 27 }
+              - column: { name: COUNTRY, value: JAPAN }
+
+        - insert:
+            tableName: USERS
+            columns:
+              - column: { name: FIRST_NAME, value: John }
+              - column: { name: AGE, valueNumeric: 25 }
+              - column: { name: COUNTRY, value: USA }
+
+        - insert:
+            tableName: USERS
+            columns:
+              - column: { name: FIRST_NAME, value: Emily }
+              - column: { name: AGE, valueNumeric: 29 }
+              - column: { name: COUNTRY, value: UK }
+
+        - insert:
+            tableName: USERS
+            columns:
+              - column: { name: FIRST_NAME, value: Ayan }
+              - column: { name: AGE, valueNumeric: 31 }
+              - column: { name: COUNTRY, value: KAZAKHSTAN }
+
+      rollback:
+        - delete:
+            tableName: USERS
+            where: FIRST_NAME='Ivan'
+        - delete:
+            tableName: USERS
+            where: FIRST_NAME='Yuki'
+        - delete:
+            tableName: USERS
+            where: FIRST_NAME='John'
+        - delete:
+            tableName: USERS
+            where: FIRST_NAME='Emily'
+        - delete:
+            tableName: USERS
+            where: FIRST_NAME='Ayan'
